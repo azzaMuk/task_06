@@ -1,19 +1,14 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>List</title>
-    </head>
-    <body>
+{% extends "base.html" %}
+
+{% block content %}
         {% for restaurant in restaurants %}
             <a href="{% url 'restaurant-detail' restaurant.id %}">
                 <ul>
-                    <li>{{restaurant.name}}</li>
-                    <li>{{restaurant.description}}</li>
-                    <li>{{restaurant.opening_time}}</li>
-                    <li>{{restaurant.closing_time}}</li>
+                    <h2>{{restaurant.name}}</h2>   </a>
+                    <h3>{{restaurant.description}}</h3>
+                    <h4>{{restaurant.opening_time}}</h4>
+                    <h4>{{restaurant.closing_time}}</h4>
                 </ul>
-            </a>
+          
         {% endfor %}
-    </body>
-</html>
+   {% endblock content %}
